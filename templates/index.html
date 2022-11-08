@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <link rel="stylesheet" href="/static/style.css">
+		<link rel="icon" type="image/x-icon" href="/static/favi.png">
+		<title>{{title}}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{title}}">
+		<meta property="og:title" content="{{title}}"/>
+		<meta property="og:url" content="{{domain}}"/>
+		<meta property="og:description" content="{{title}}"/>
+		<meta property="og:image" content="/static/favi.png"/>
+		<meta name="twitter:card" content="{{title}}"/>
+	</head>
+
+	<main>
+		<div class="container">
+			<form action="/output" enctype="multipart/form-data" method="post">
+				{% for i in range (0, filecount) %}
+					<input type="file" id="file{{i}}" name="file{{i}}" class="file">
+				{% endfor %}
+				<input type="hidden" id="filecount" name="filecount" value="{{filecount}}">
+				{{ xcaptcha }}
+				<input class="submit" type="submit" style="font-weight: bold;" value="Upload Files">
+			</form>
+			<form action="/">
+				<input type="hidden" id="filecount" name="filecount" value="{{filecount}}">
+				<input class="submit" type="submit" style="font-weight: bold;" value="Add More">
+			</form>
+		</div>
+		<footer>
+			<p>Made by <a href="https://lucasvl.nl/">LucasVL</a></p>
+		</footer>
+	</main>
+</html>
