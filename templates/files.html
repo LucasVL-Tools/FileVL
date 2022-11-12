@@ -24,15 +24,15 @@
 		<div class="container">
 			<ol>
 			{% for i in range(files|length) %}
-				<li><a href="/f/{{url}}/{{files[i]}}">{{files[i]}}</a></li>
+				<li><a href="/f/{{url}}/{{files[i]}}" target="_blank">{{files[i]}}</a></li>
 				{% if filetype[i] == "image" %}
-					<a href="/f/{{url}}/{{files[i]}}"><img src="/f/{{url}}/{{files[i]}}" height="150"></a>
+					<a href="/f/{{url}}/{{files[i]}}" target="_blank"><img src="/f/{{url}}/{{files[i]}}" height="150"></a>
 				{% endif %}
 			{% endfor %}
 			<ol/>
 		</div>
 		<footer>
-                        <p class="orange">Made by <a href="https://lucasvl.nl/">LucasVL</a></p>
+                        <p class="orange">Made by <a href="https://lucasvl.nl/" target="_blank">LucasVL</a></p>
                 </footer>
 	</main>
 </html>
